@@ -1,0 +1,789 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&family=Lato:wght@100&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    height: 10vh;
+    top: 0;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 0 2rem;
+    border-bottom: 1px solid white;
+}
+
+nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 3rem;
+    display: flex;
+    justify-content: baseline;
+    align-items: baseline;
+    flex-direction: row;
+}
+
+.titre {
+    margin-left: 5%;
+    text-transform: uppercase;
+}
+
+.toggle {
+    display: none;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    width: 550px;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.lienMenu:hover {
+    color: rgb(255, 172, 48);
+}
+
+
+
+
+
+@media all and (max-width: 1000px) {
+
+    header {
+        background: transparent;
+    }
+
+    .toggle {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        position: relative;
+        z-index: 20;
+    }
+
+    .logo {
+        position: relative;
+        z-index: 20;
+    }
+
+    .ouvrir {
+        display: block;
+    }
+
+    .fermer {
+        display: none;
+    }
+
+    .open .ouvrir {
+        display: none;
+    }
+
+    .open .fermer {
+        display: block;
+    }
+
+    .menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #000;
+        flex-direction: column;
+        padding: 2rem;
+        justify-content: space-around;
+        transform: translateX(-100%);
+        transition: transform 1s;
+    }
+
+    .menu li a {
+        font-size: 2rem;
+    }
+
+    .open .menu {
+        transform: translateX(0);
+    }
+}
+
+/*-------------------------------------------------
+                    CONTAINER 1
+--------------------------------------------------*/
+
+.container1 {
+    height: 100vh;
+    background: url('../img/fond.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.container1-1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.container1-2 {
+
+    width: 70%;
+    height: 50%;
+    margin: auto;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgb(15, 15, 15);
+}
+
+.blocBouton {
+
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.bouton1,
+.bouton2,
+.bouton3 {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 250px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    list-style: none;
+}
+
+.bouton1:hover,
+.bouton2:hover,
+.bouton3:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    list-style: none;
+}
+
+.blocBienvenue {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome {
+    font-size: 2rem;
+    color: white;
+}
+
+a.selection {
+    cursor: pointer;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+
+}
+
+a.selection:hover {
+    color: white;
+    list-style: none;
+}
+
+
+
+/*--------------------------------------------------------
+                    CONTAINER 2
+---------------------------------------------------------*/
+
+
+
+.container2 {
+    width: 100%;
+    height: 100vh;
+}
+
+.container2-1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.blocH {
+
+    width: 90%;
+    height: 20%;
+    /* background-color: antiquewhite;*/
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.blocH-1 {
+
+    width: 50%;
+    height: 80%;
+    /* background-color: rgb(212, 147, 61);*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titreListeMission {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.blocM {
+
+    width: 90%;
+    height: 70%;
+    /* background-color: rgb(111, 250, 99);*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.blocM-1 {
+
+    width: 100%;
+    height: 90%;
+    /*background-color: rgb(89, 61, 212);*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tableauMission {
+
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.missionListe {
+    width: 100%;
+}
+
+th {
+    font-size: 1.2rem;
+    background-color: rgb(54, 196, 196);
+    border: 1px solid gray;
+}
+
+.tdDescription {
+    width: 30%;
+}
+
+.tdStandard {
+    width: 5%;
+}
+
+td {
+
+    background-color: azure;
+    font-size: 0.8rem;
+    border: 1px solid rgb(204, 204, 204);
+}
+
+.detail {
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.detail:hover {
+    font-weight: bold;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: orange;
+}
+
+
+/*--------------------------------------------------------
+                    CONTAINER 3 / MISSION.PHP
+---------------------------------------------------------*/
+
+
+
+.container3 {
+    width: 100%;
+    height: 100vh;
+}
+
+.container3-1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container3-2 {
+    width: 90%;
+    height: 75%;
+    background-color: rgb(243, 243, 243);
+}
+
+.blocMissionHaut {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titreBlocMissionHaut {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.blocDetailMission {
+    width: 100%;
+    height: 90%;
+    /*background-color: aqua;*/
+    display: flex;
+    flex-direction: row;
+
+
+}
+
+.blocDescriptionG {
+    width: 40%;
+    height: 100%;
+    /*background-color: aquamarine;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.blocDescriptionG-1 {
+    width: 90%;
+    height: 90%;
+    background-color: rgb(123, 202, 255);
+    border-radius: 15px;
+
+}
+
+.blocTitreDescG-1 {
+    width: 100%;
+    height: 15%;
+    /* background-color: aliceblue;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titreDescG-1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+
+}
+
+/*descripiton bloc*/
+
+.blocDescG-1 {
+    width: 100%;
+    height: 85%;
+    /*background-color: rgb(72, 170, 255);*/
+    padding: 10%;
+}
+
+.DescG-1 {
+    font-size: 1.3rem;
+    text-align: justify;
+
+}
+
+
+/*--------- Bloc DROITE --------*/
+
+.blocInfoD {
+    width: 60%;
+    height: 100%;
+    /* background-color: rgb(241, 238, 52);*/
+    display: flex;
+    flex-direction: column;
+}
+
+.blocDate,
+.blocI-1 {
+    width: 100%;
+    height: 20%;
+    /*background-color: orange;*/
+    display: flex;
+    flex-direction: row;
+}
+
+.blocDateDebut,
+.blocDateFin,
+.blocI-2 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.date,
+.info {
+    font-size: 1.5rem;
+}
+
+.blocI-3 {
+    width: 100%;
+    height: 60%;
+    /*background-color: rgb(235, 95, 223);*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.blocI-3G {
+    width: 50%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(175, 240, 208);
+    border-radius: 20px;
+}
+
+.blocGeneral {
+    width: 100%;
+    height: 25%;
+    padding-left: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.titreBC {
+    font-size: 1.7rem;
+    text-decoration: underline;
+}
+
+.infoBC {
+    font-size: 1.3rem;
+}
+
+
+
+
+/*------------------------------------------------------
+                    INSCRIPTION                         
+-------------------------------------------------------*/
+
+
+.container4 {
+    width: 100%;
+    height: 100vh;
+}
+
+.container4-1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    flex-direction: column;
+
+}
+
+.erreur {
+
+    width: 60%;
+    height: 5%;
+    color: rgb(255, 56, 56);
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.valide {
+    width: 60%;
+    height: 5%;
+    color: rgb(75, 250, 154);
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+
+.container4-2 {
+    width: 40%;
+    height: 45%;
+    background-color: rgb(201, 201, 201);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.blocHaut4-2 {
+    width: 100%;
+    height: 10%;
+    background-color: rgb(109, 166, 212);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inscription4-2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+/*---- FORM ---*/
+
+.blocMilieu4-2 {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.blocIntegreH {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.blocInscription4-2 {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cadre4-2 {
+    width: 60%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.labelTitre {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+.textLabel {
+    font-size: 1.5rem;
+}
+
+.labelInput {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+.inputLabel {
+    font-size: 1.5rem;
+
+}
+
+.input {
+    width: 250px;
+    height: 30px;
+}
+
+.blocIntegreB {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bouton4-2 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bouton4 {
+    width: 70%;
+    height: 60%;
+    border-radius: 10px;
+    background-color: #000;
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+}
+
+.bouton4:hover {
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+}
+
+
+
+
+
+
+/*------------------------------------------------------
+                    CONNEXION CONTAINER 5                        
+-------------------------------------------------------*/
+
+
+.container5 {
+    width: 100%;
+    height: 100vh;
+}
+
+.container5-1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #000;
+}
+
+
+.container5-2 {
+    width: 40%;
+    height: 45%;
+    background-color: rgb(201, 201, 201);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+/*-------------------------------------------------
+                    CONTAINER ADMINISTRATION
+--------------------------------------------------*/
+
+.container6 {
+    width: 100%;
+    height: 100vh;
+    background-color: #333;
+}
+
+.container6-1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.blocVide {
+    width: 100%;
+    height: 10%;
+}
+
+.blocRang {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rang {
+    font-size: 2.5rem;
+    color: aquamarine;
+    text-transform: uppercase;
+}
+
+.blocBoutonAdmin {
+
+    width: 100%;
+    height: 80%;
+    background-color: rgb(92, 92, 92);
+
+}
+
+
+/*---------------*/
+
+.blocTitre {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titre {
+    font-size: 2.5rem;
+    color: rgb(255, 232, 127);
+    text-transform: uppercase;
+}
+
+
+.blocListe {
+
+    width: 100%;
+    height: 95%;
+    background-color: rgb(92, 92, 92);
+
+}
