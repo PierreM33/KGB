@@ -767,7 +767,7 @@ td {
 
 .blocTitre {
     width: 100%;
-    height: 5%;
+    height: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -783,7 +783,188 @@ td {
 .blocListe {
 
     width: 100%;
-    height: 95%;
-    background-color: rgb(92, 92, 92);
+    height: 90%;
+    background-color: rgb(122, 122, 122);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.blocAdminHaut {
+    width: 100%;
+    height: 10%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.select {
+
+    width: 250px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+
+.submit {
+
+    width: 125px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+
+/*----------- PARTIE TABLEAU --------------*/
+.blocAdminBas {
+    width: 90%;
+    height: 80%;
+
+}
+
+.tableauListe {
+
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.Liste {
+    width: 100%;
+}
+
+.nom_session {
+
+    font-size: 1.5rem;
+    width: 30%;
+    height: 5%;
+    color: rgb(55, 158, 255);
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1%;
+    border-radius: 10px;
+}
+
+
+/*------------------------- EDIT USER --------------------*/
+/*---------- CONTAINER 5----------------- -----*/
+
+
+.container5 {
+    width: 100%;
+    height: 100vh;
+}
+
+.container5-1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #333;
+
+}
+
+.vide {
+    width: 100%;
+    height: 10%;
+}
+
+.containerTitreBackground {
+    width: 100%;
+    height: 10%;
+    background-color: rgb(65, 65, 65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    color: rgb(55, 158, 255);
+    font-size: 2rem;
+
+}
+
+.blocEdition {
+    width: 100%;
+    height: 80%;
+    background-color: rgb(65, 65, 65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blocEditionCentre {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.titreEdit {
+    font-size: 1.5rem;
+    margin: 2%;
+    color: aquamarine;
+    font-weight: bold;
+}
+
+p {
+    margin: 2%;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+
+
+
+/*------------------------- CREATION MISSION --------------------*/
+/*---------- CONTAINER 6----------------- -----*/
+
+a.missionCreation {
+
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+a.missionCreation:hover {
+
+    color: rgb(64, 179, 255);
+    font-size: 1.5rem;
+}
+
+.container6 {
+    width: 100%;
+    height: 100vh;
+}
+
+.container6-1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #333;
 
 }

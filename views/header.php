@@ -25,6 +25,7 @@ if (isConnected()) {
 </head>
 
 
+
 <header>
     <nav>
         <div class="logo">
@@ -37,7 +38,6 @@ if (isConnected()) {
         </div>
         <ul class="menu">
             <li><a class="lienMenu" href="..\index.php">Home</a></li>
-            <li><a class="lienMenu" href="inscription.php">Inscription</a></li>
             <?php
             if ($sessionId != NULL) { ?><li><a class="lienMenu" href="..\<?php echo pathPhp(); ?>deconnexion.php">Déconnexion</a></li>
             <?php
@@ -46,7 +46,7 @@ if (isConnected()) {
                 <li><a class="lienMenu" href="connexion.php">Connexion</a></li>
             <?php
             }
-            if ($rang >= 1) { ?><li><a class="lienMenu" href="administration.php">Administration</a></li>
+            if ($rang >= 2) { ?><li><a class="lienMenu" href="administration.php">Administration</a></li>
             <?php
             } else {
             ?><li><a class="lienMenu" href=""></a></li>

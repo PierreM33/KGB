@@ -4,7 +4,9 @@ require_once "header.php";
 require_once 'user.php';
 
 
-if (isConnected()) {
+if (isConnected() and $rang >= 2) {
+
+
 
 
 ?>
@@ -26,32 +28,57 @@ if (isConnected()) {
                 <div class="blocBoutonAdmin">
                     <div class="blocBouton">
                         <div class="bouton1"><a class="selection" href="#lister">Lister</a></div>
-                        <div class="bouton2"><a class="selection">Modifier</a></div>
-                        <div class="bouton3"><a class="selection">Créer</a></div>
+                        <div class="bouton2"><a class="selection" href="#edit">Modifier</a></div>
+                        <div class="bouton3"><a class="selection" href="#creation">Créer</a></div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- LISTER -->
         <section class="container6" id="lister">
             <div class="container6-1">
-                <!--Affiche le statut administrateur -->
+                <!--Affiche le nom de la table -->
                 <div class="blocTitre">
                     <div class="titre">Lister les tables</div>
                 </div>
 
                 <div class="blocListe">
-
+                    <?php require_once "listerAdmin.php"; ?>
                 </div>
             </div>
         </section>
 
+        <!-- MODIFIER -->
+        <section class="container6" id="edit">
+            <div class="container6-1">
+                <!--Affiche le nom de la table -->
+                <div class="blocTitre">
+                    <div class="titre">Modifier les tables</div>
+                </div>
 
-        <script src="app.js"></script>
+                <div class="blocListe">
+                    <?php require_once "modifierAdmin.php"; ?>
+                </div>
+            </div>
+        </section>
+
+        <!-- CREATION -->
+        <section class="container6" id="creation">
+            <div class="container6-1">
+                <!--Affiche le nom de la table -->
+                <div class="blocTitre">
+                    <div class="titre">Création</div>
+                </div>
+
+                <div class="blocListe">
+                    <?php require_once "creationAdmin.php"; ?>
+                </div>
+            </div>
+        </section>
     </body>
 
     </html>
-
 <?php
 
 } else {

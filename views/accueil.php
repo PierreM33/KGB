@@ -85,7 +85,6 @@ require_once "header.php";
     <?php
     }
     ?>
-    <script src="app.js"></script>
 </body>
 
 </html>

@@ -1,8 +1,10 @@
 <?php
 
-require_once "header.php"
+require_once "header.php";
 
-
+if (isConnected()) {
+    header('Location:..\index.php');
+}
 ?>
 <!-- PARTIE CONNEXION -->
 
@@ -26,18 +28,18 @@ require_once "header.php"
                             </div>
                             <div class="labelInput">
                                 <div class="inputLabel">
-                                    <input class="input" type="text" id="name" name="user_name">
+                                    <input class="input" type="text" id="nom" name="nom">
                                 </div>
                             </div>
 
                         </div>
                         <div class="cadre4-2">
                             <div class="labelTitre">
-                                <div class="textLabel">Code Agent :</div>
+                                <div class="textLabel">Prénom Agent :</div>
                             </div>
                             <div class="labelInput">
                                 <div class="inputLabel">
-                                    <input class="input" type="number" id="code" name="code">
+                                    <input class="input" type="text" id="prenom" name="prenom">
                                 </div>
                             </div>
 

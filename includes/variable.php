@@ -29,3 +29,8 @@ $Contact->execute(array($_GET['id']));
 //Planque
 $P = $bdd->prepare('SELECT * FROM planque WHERE mission_attribue = ?');
 $P->execute(array($_GET['id']));
+
+//USER
+$U = $bdd->prepare('SELECT * FROM users WHERE id = ?');
+$U->execute(array($_GET['id']));
+$user = $U->fetch();

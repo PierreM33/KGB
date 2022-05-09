@@ -4,17 +4,17 @@ require_once "..\includes/connexion_bdd.php";
 
 
 
-if (isset($_POST['user_name']) && isset($_POST['code'])) {
+if (isset($_POST['nom']) && isset($_POST['prenom'])) {
 
-    $name = strip_tags(htmlspecialchars($_POST['user_name']));
-    $code = strip_tags(htmlspecialchars($_POST['code']));
+    $nom = strip_tags(htmlspecialchars($_POST['nom']));
+    $prenom = strip_tags(htmlspecialchars($_POST['prenom']));
     $password = strip_tags(htmlspecialchars($_POST['password']));
 
 
     //RECUPERATION DU JOUEUR
-    $verif = $bdd->prepare('SELECT * FROM users WHERE user = :user AND code = :code');
-    $verif->bindValue('user', $name);
-    $verif->bindValue('code', $code);
+    $verif = $bdd->prepare('SELECT * FROM users WHERE nom = :nom AND prenom = :prenom');
+    $verif->bindValue('nom', $nom);
+    $verif->bindValue('prenom', $prenom);
     $verif->execute();
     $V = $verif->fetch(PDO::FETCH_ASSOC);
 
@@ -23,26 +23,29 @@ if (isset($_POST['user_name']) && isset($_POST['code'])) {
 
 
     //ON VERIFIE QUE LES CHAMPS NE SOIENT PAS VIDE
-    if (!empty($name) and !empty($code) and !empty($password)) {
+    if (!empty($nom) and !empty($prenom) and !empty($password)) {
 
         //VERIFIER QUE LE PSEUDO EXISTE
-        if ($V['user'] == $name) {
+        if ($V['nom'] == $nom and $V['prenom'] == $prenom) {
 
             //VERIFICATION DU PASSWORD HASH
             if (password_verify($password, $passwordHash)) {
 
-                //VERIFIER QUE LE CODE SOIT BIEN NUMERIQUE
-                if (is_numeric($code) and $code == $V['code']) {
 
-                    //AJOUTER LA SESSION AU MEMBRE
-                    $_SESSION['id'] = $V['id'];
-                    $_SESSION['name'] = $V['name'];
-                    $_SESSION['code'] = $V['code'];
 
-                    //ON REDIRIGE VERS LA PAGE
-                    $_SESSION['error'] = '<div class="valide">Agent connecté.</div>';
-                } else
-                    $_SESSION['error'] = '<div class="erreur">Le code n\'est pas un chiffre.</div>';
+                //AJOUTER LA SESSION AU MEMBRE
+                $_SESSION['id'] = $V['id'];
+                $_SESSION['nom'] = $V['nom'];
+                $_SESSION['prenom'] = $V['prenom'];
+                //SESSION PAR DEFAUT
+                $_SESSION['table_edit'] = "mission";
+                $_SESSION['select_categorie'] = "mission";
+                $_SESSION['creation_select'] = "mission";
+
+
+
+                //ON REDIRIGE VERS LA PAGE
+                $_SESSION['error'] = '<div class="valide">Agent connecté.</div>';
             } else
                 $_SESSION['error'] = '<div class="erreur">Erreur de password.</div>';
         } else

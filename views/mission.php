@@ -105,8 +105,6 @@ if (isConnected()) {
 
         </section>
 
-
-        <script src="app.js"></script>
     </body>
 
     </html>

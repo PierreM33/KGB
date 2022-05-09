@@ -30,3 +30,11 @@ function pathIncludes()
 {
     return realpath(true) . 'includes/';
 }
+
+
+//VERIFICATION DE DATE
+function isValid($date, $format = 'Y-m-d')
+{
+    $dt = DateTime::createFromFormat($format, $date);
+    return $dt && $dt->format($format) === $date;
+}
