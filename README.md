@@ -3,4 +3,4 @@
 Projet Terminé.
 
 Bonus- Ajout d'inscription.
-Base de donnée fictive et vide sur GitHub.
+Base de donnée fictive et rempli aléatoirement.
