@@ -4,19 +4,19 @@ require_once "..\includes/connexion_bdd.php";
 
 
 
-if (isset($_POST['adresse'])  && isset($_POST['pays']) && isset($_POST['type']) && isset($_POST['mission']) && isset($_POST['code'])) {
+if (isset($_POST['adresse'])  && isset($_POST['pays']) && isset($_POST['type'])  && isset($_POST['code'])) {
 
-    if (!empty($_POST['adresse']) && !empty($_POST['pays']) && !empty($_POST['type']) && !empty($_POST['mission'] && !empty($_POST['code']))) {
+    if (!empty($_POST['adresse']) && !empty($_POST['pays']) && !empty($_POST['type'])  && !empty($_POST['code'])) {
 
         $adresse = strip_tags(htmlspecialchars($_POST['adresse']));
         $pays = strip_tags(htmlspecialchars($_POST['pays']));
         $type = strip_tags(htmlspecialchars($_POST['type']));
         $code = strip_tags(htmlspecialchars($_POST['code']));
-        $mission = strip_tags(htmlspecialchars($_POST['mission']));
+        $mission = 0;
 
 
         //verifier que la mission soit un bien un nombre positif
-        if (is_numeric($mission) && $mission >= 1) {
+        if ($code >= 0 and $type >= 0) {
 
             if (is_numeric($code) and is_numeric($type)) {
 
@@ -34,9 +34,9 @@ if (isset($_POST['adresse'])  && isset($_POST['pays']) && isset($_POST['type']) 
 
                 //
             } else
-                $_SESSION['error'] = '<div class="erreur">Erreur sur le code.</div>';
+                $_SESSION['error'] = '<div class="erreur">Erreur sur le code ou le type.</div>';
         } else
-            $_SESSION['error'] = '<div class="erreur">Erreur sur la mission.</div>';
+            $_SESSION['error'] = '<div class="erreur">Le code ou le type ne peut pas être négatif.</div>';
     } else
         $_SESSION['error'] = '<div class="erreur">Erreur, veuillez contacter l\'administrateur.</div>';
 } else

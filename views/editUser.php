@@ -16,7 +16,7 @@ if (isConnected()) {
         <section class="container5">
             <div class="container5-1">
                 <div class="vide"></div>
-                <div class="containerTitreBackground">Vous editez le rang du membre : - <?php echo $user['user']; ?> - ID : <?php echo $user['id']; ?></div>
+                <div class="containerTitreBackground">Vous editez le rang du membre : - <?php echo $user['nom']; ?> - ID : <?php echo $user['id']; ?></div>
                 <div class="blocEdition">
                     <div class="blocEditionCentre">
                         <div class="titreEdit">Entrez un numéro entre 1 et 2</div>
@@ -27,6 +27,10 @@ if (isConnected()) {
                         </form>
                         <p>Droit d'administration : Rang 2</br>
                             Droit utilisateur : Rang 1</p>
+
+                        <div class="titreEdit">
+                            <a class="missionCreation" href="administration.php#edit">Retour au panneau administration</a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -44,6 +44,7 @@ if (isConnected()) {
             } else {
             ?>
                 <li><a class="lienMenu" href="connexion.php">Connexion</a></li>
+                <li><a class="lienMenu" href="inscription.php">Inscription</a></li>
             <?php
             }
             if ($rang >= 2) { ?><li><a class="lienMenu" href="administration.php">Administration</a></li>

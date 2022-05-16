@@ -3,34 +3,48 @@
 require_once "connexion_bdd.php";
 
 
+$getId = strip_tags(htmlspecialchars($_GET['id']));
+
 //Recupère l'id de la mission choisie
-$mission = $bdd->prepare('SELECT * FROM mission WHERE id = ?');
-$mission->execute(array($_GET['id']));
+$mission = $bdd->prepare('SELECT * FROM mission WHERE id = :id');
+$mission->bindValue('id', $getId);
+$mission->execute();
 $Miss = $mission->fetch();
 
 
-//On récupère la liste dans le tableau du champs de la BDD
-$liste =  json_decode($Miss['agent_participe'], true);
+
+$categorieAgent = "agent";
+
+//AGENT
+$membreAgent = $bdd->prepare('SELECT * FROM membre WHERE mission_attribue = :mission_attribue AND categorie = :categorie');
+$membreAgent->bindValue('mission_attribue', $getId);
+$membreAgent->bindValue('categorie', $categorieAgent);
+$membreAgent->execute();
+
+$categorieCible = "cible";
+
+//CIBLE
+$membreCible = $bdd->prepare('SELECT * FROM membre WHERE mission_attribue = :mission_attribue AND categorie = :categorie');
+$membreCible->bindValue('mission_attribue', $getId);
+$membreCible->bindValue('categorie', $categorieCible);
+$membreCible->execute();
 
 
+$categorieContact = "contact";
 
-//Agent
-$LA = $bdd->prepare('SELECT * FROM agent WHERE mission_attribue = ?');
-$LA->execute(array($_GET['id']));
+//CONTACT
+$membreContact = $bdd->prepare('SELECT * FROM membre WHERE mission_attribue = :mission_attribue AND categorie = :categorie');
+$membreContact->bindValue('mission_attribue', $getId);
+$membreContact->bindValue('categorie', $categorieContact);
+$membreContact->execute();
 
-//Cible
-$C = $bdd->prepare('SELECT * FROM cible WHERE mission_attribue = ?');
-$C->execute(array($_GET['id']));
 
-//Contact
-$Contact = $bdd->prepare('SELECT * FROM contact WHERE mission_attribue = ?');
-$Contact->execute(array($_GET['id']));
-
-//Planque
-$P = $bdd->prepare('SELECT * FROM planque WHERE mission_attribue = ?');
-$P->execute(array($_GET['id']));
+$planque = $bdd->prepare('SELECT * FROM planque WHERE mission_attribue = :mission_attribue');
+$planque->bindValue('mission_attribue', $getId);
+$planque->execute();
 
 //USER
-$U = $bdd->prepare('SELECT * FROM users WHERE id = ?');
-$U->execute(array($_GET['id']));
+$U = $bdd->prepare('SELECT * FROM users WHERE id = :id');
+$U->bindValue('id', $getId);
+$U->execute();
 $user = $U->fetch();

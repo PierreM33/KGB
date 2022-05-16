@@ -4,6 +4,7 @@
 require_once "header.php";
 require_once "..\includes/variable.php";
 
+//Verification connexion simple membre
 if (isConnected()) {
 
 
@@ -59,39 +60,41 @@ if (isConnected()) {
                                         <div class="titreBC">Agents engagé</div>
                                         <div class="infoBC">
                                             <?php
-                                            while ($listeAgent = $LA->fetch()) {
 
-                                                echo  "   " . $listeAgent['nom'] . "  ";
-                                            } ?>
+                                            while ($AgentMembre = $membreAgent->fetch()) {
+
+                                                echo  " - " . $AgentMembre['nom'] . " - ";
+                                            }  ?>
                                         </div>
                                     </div>
                                     <div class="blocGeneral">
                                         <div class="titreBC">Cible</div>
                                         <div class="infoBC">
                                             <?php
-                                            while ($cible = $C->fetch()) {
 
-                                                echo  "   " . $cible['nom'] . "  ";
-                                            } ?>
+                                            while ($CibleMembre = $membreCible->fetch()) {
+
+                                                echo  " - " . $CibleMembre['nom'] . " - ";
+                                            }  ?>
                                         </div>
                                     </div>
                                     <div class="blocGeneral">
                                         <div class="titreBC">Contact</div>
                                         <div class="infoBC">
                                             <?php
-                                            while ($contact = $Contact->fetch()) {
+                                            while ($ContactMembre = $membreContact->fetch()) {
 
-                                                echo  "   " . $contact['nom'] . "  ";
-                                            } ?>
+                                                echo  " -  " . $ContactMembre['nom'] . " - ";
+                                            }  ?>
                                         </div>
                                     </div>
                                     <div class="blocGeneral">
                                         <div class="titreBC">Planque</div>
                                         <div class="infoBC">
                                             <?php
-                                            while ($planque = $P->fetch()) {
+                                            while ($Planque = $planque->fetch()) {
 
-                                                echo  "   " . $planque['adresse'] . "  ";
+                                                echo  " - " . $Planque['adresse'] . " en " . $Planque['pays'] . " - ";
                                             } ?>
                                         </div>
                                     </div>

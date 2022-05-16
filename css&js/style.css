@@ -37,7 +37,7 @@ nav {
 }
 
 .logo {
-    font-size: 3rem;
+    font-size: 1.5rem;
     display: flex;
     justify-content: baseline;
     align-items: baseline;
@@ -45,7 +45,7 @@ nav {
 }
 
 .titre {
-    margin-left: 5%;
+
     text-transform: uppercase;
 }
 
@@ -475,7 +475,6 @@ td {
 .blocI-3 {
     width: 100%;
     height: 60%;
-    /*background-color: rgb(235, 95, 223);*/
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -483,8 +482,8 @@ td {
 }
 
 .blocI-3G {
-    width: 50%;
-    height: 90%;
+    width: 85%;
+    height: 95%;
     display: flex;
     flex-direction: column;
     background-color: rgb(175, 240, 208);
@@ -494,7 +493,6 @@ td {
 .blocGeneral {
     width: 100%;
     height: 25%;
-    padding-left: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -507,7 +505,8 @@ td {
 }
 
 .infoBC {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    text-align: center;
 }
 
 
@@ -814,6 +813,7 @@ td {
 }
 
 
+
 .submit {
 
     width: 125px;
@@ -920,7 +920,7 @@ td {
 }
 
 .titreEdit {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin: 2%;
     color: aquamarine;
     font-weight: bold;
@@ -967,4 +967,91 @@ a.missionCreation:hover {
     flex-direction: column;
     background-color: #333;
 
+}
+
+
+
+
+/*------------------------- EDITION --------------------*/
+/*---------- CONTAINER EDITION----------------- -----*/
+
+
+.containerEdition {
+    width: 100%;
+    height: 100vh;
+}
+
+.containerEdition-1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #333;
+
+}
+
+
+
+.blocListeEdition {
+
+    width: 100%;
+    height: 100%;
+    background-color: rgb(122, 122, 122);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+
+.blocAdminBasEdition {
+    width: 90%;
+    height: 60%;
+
+}
+
+.blocInfoEdition {
+    width: 100%;
+    height: 30%;
+    color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.ClassEdition {
+
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    border: none;
+    color: #333;
+    cursor: pointer;
+}
+
+.tdEdition {
+    width: 5%;
+}
+
+.ClassEditionBouton {
+
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    border: none;
+    color: #333;
+    cursor: pointer;
+}
+
+.ClassEditionBouton:hover {
+
+    background-color: #333;
+    color: rgb(255, 255, 255);
 }

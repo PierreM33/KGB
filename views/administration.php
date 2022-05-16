@@ -30,6 +30,7 @@ if (isConnected() and $rang >= 2) {
                         <div class="bouton1"><a class="selection" href="#lister">Lister</a></div>
                         <div class="bouton2"><a class="selection" href="#edit">Modifier</a></div>
                         <div class="bouton3"><a class="selection" href="#creation">Créer</a></div>
+
                     </div>
                 </div>
             </div>

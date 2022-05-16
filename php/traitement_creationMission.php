@@ -58,24 +58,18 @@ if (
 
 
                             //AJOUTE DANS LA BDD LA MISSION
-
-                            $create = $bdd->prepare('INSERT INTO mission (nom,description,code,pays,agent_participe,cible_participe,contact_participe,type,planque_participe,specialite_requis,date_debut,date_fin,statut) 
-                            VALUES(:nom,:description,:code,:pays,:agent_participe,:cible_participe,:contact_participe,:type,:planque_participe,:specialite_requis,:date_debut,:date_fin,:statut)');
+                            $create = $bdd->prepare('INSERT INTO mission (nom,description,code,pays,type,specialite_requis,date_debut,date_fin,statut) 
+                            VALUES(:nom,:description,:code,:pays,:type,:specialite_requis,:date_debut,:date_fin,:statut)');
                             $create->bindValue('nom', $nom);
                             $create->bindValue('description', $description);
                             $create->bindValue('code', $code);
                             $create->bindValue('pays', $pays);
-                            $create->bindValue('agent_participe', $vide);
-                            $create->bindValue('cible_participe', $vide);
-                            $create->bindValue('contact_participe', $vide);
                             $create->bindValue('type', $type);
-                            $create->bindValue('planque_participe', $vide);
                             $create->bindValue('specialite_requis', $specialite);
                             $create->bindValue('date_debut', $dateDebut);
                             $create->bindValue('date_fin', $dateFin);
                             $create->bindValue('statut', $statut);
                             $C = $create->execute();
-
 
                             $_SESSION['error'] = '<div class="valide">Membre ajouté</div>';
 
@@ -94,4 +88,4 @@ if (
         $_SESSION['error'] = '<div class="erreur">Erreur, veuillez contacter l\'administrateur.</div>';
 } else
     $_SESSION['error'] = '<div class="erreur">Erreur, veuillez contacter l\'administrateur.</div>';
-header('Location: ..\views/administration.php#lister');
+header('Location: ..\views/administration.php#creation');
